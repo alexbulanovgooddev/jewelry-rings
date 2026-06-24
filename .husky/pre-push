@@ -1,0 +1,2 @@
+npm exec tsc -- -b
+npm run lint

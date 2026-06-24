@@ -1,0 +1,55 @@
+{
+	"name": "jewelry-rings",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"preview": "vite preview",
+		"lint": "npm run lint:eslint && npm run lint:stylelint && npm run lint:prettier",
+		"lint:eslint": "eslint .",
+		"lint:eslint:fix": "eslint . --fix",
+		"lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
+		"lint:stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+		"lint:prettier": "prettier . --check",
+		"format": "prettier . --write",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.39.4",
+		"@types/node": "^24.12.0",
+		"eslint": "^9.39.4",
+		"eslint-config-prettier": "^10.1.8",
+		"glob": "^13.0.6",
+		"husky": "^9.1.7",
+		"jiti": "^2.6.1",
+		"lint-staged": "^16.4.0",
+		"meow": "^13.2.0",
+		"postcss-html": "^1.8.1",
+		"postcss-scss": "^4.0.9",
+		"prettier": "^3.8.1",
+		"sass": "^1.98.0",
+		"stylelint": "^17.4.0",
+		"stylelint-config-standard": "^40.0.0",
+		"stylelint-config-standard-scss": "^17.0.0",
+		"stylelint-prettier": "^5.0.3",
+		"typescript": "~5.9.3",
+		"typescript-eslint": "^8.57.1",
+		"vite": "^8.0.1",
+		"vite-plugin-checker": "^0.12.0",
+		"vite-plugin-svg-spriter": "^1.0.0"
+	},
+	"lint-staged": {
+		"*.{js,cjs,mjs,ts,cts,mts}": [
+			"eslint --fix"
+		],
+		"*.{css,scss,sass}": [
+			"stylelint --fix",
+			"prettier --write"
+		],
+		"*.{html,json,md,yml,yaml}": [
+			"prettier --write"
+		]
+	}
+}
