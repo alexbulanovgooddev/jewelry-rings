@@ -1,0 +1,10 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.logo {
+	font-family: monospace;
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-decoration: none;
+	color: var(--color-black);
+}

@@ -13,13 +13,13 @@ html,
 body {
 	position: relative;
 	height: 100%;
-	font-family: 'Mona Sans', Arial, sans-serif;
+	font-family: Geist, Arial, sans-serif;
 	color: var(--color-black);
 	background-color: var(--color-white);
 	overflow-x: clip;
 }
 
-body > div#app {
+body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;

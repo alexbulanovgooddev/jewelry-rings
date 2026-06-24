@@ -1,0 +1,21 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	width: 100%;
+	padding: 16px 0;
+
+	@media screen and (min-width: $md) {
+		padding: 32px 0;
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}

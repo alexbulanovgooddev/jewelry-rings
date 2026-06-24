@@ -14,7 +14,55 @@
 	</head>
 
 	<body>
-		<div>Hello World</div>
+		<header class="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<a class="logo" href="/">Ringstone</a>
+					<div class="collection">
+						<span>Ring Collection</span>
+						<svg
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<circle
+								cx="11.8533"
+								cy="11.6795"
+								r="9.89771"
+								stroke="currentColor"
+								stroke-width="3" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="hero">
+			<div class="hero__wrapper">
+				<div class="hero__left">
+					<div class="container">
+						<h1 class="hero__title">
+							<div class="mask">
+								<span id="animated-word">Relationships</span>
+							</div>
+							<div class="mask">
+								<span>Redefined</span>
+							</div>
+						</h1>
+					</div>
+				</div>
+				<div class="hero__right">
+					<div class="hero__media">
+						<div class="hero__media-overlay"></div>
+						<video class="hero__video" autoplay muted loop>
+							<source src="./assets/video/hands.mp4" type="video/mp4" />
+						</video>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<script type="module" src="/main.ts"></script>
 	</body>
 </html>

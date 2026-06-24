@@ -1,0 +1,20 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.collection {
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+
+	@media screen and (min-width: $md) {
+		color: var(--color-white);
+	}
+
+	span {
+		margin-top: 0.02em;
+	}
+
+	svg {
+		margin-left: 0.5rem;
+	}
+}
