@@ -1,0 +1,13 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.marquee {
+	display: flex;
+	font-weight: 700;
+	color: #f5f5f5;
+	overflow: hidden;
+
+	&__text {
+		font-size: clamp(8rem, 20vw, 24rem);
+	}
+}
