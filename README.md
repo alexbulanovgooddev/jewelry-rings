@@ -1,4 +1,4 @@
-# Mojito Cocktail
+# Jewelry Rings
 
 Современный веб-сайт коктейльного бара.
 
