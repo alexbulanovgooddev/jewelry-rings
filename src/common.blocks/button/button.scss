@@ -1,0 +1,13 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.button {
+	border-radius: 999px;
+	display: inline-block;
+	padding: 16px 24px;
+	font-size: 1rem;
+	font-weight: 700;
+	text-decoration: none;
+	color: var(--color-black);
+	background-color: var(--color-white);
+}
