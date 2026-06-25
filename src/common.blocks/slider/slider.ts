@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					pin: isDesktop ? true : false,
 					scrub: 1,
 					invalidateOnRefresh: true,
+					refreshPriority: 1,
 					end: () =>
 						isDesktop ? `+=${slider.offsetWidth - window.innerWidth}` : 'bottom'
 				}
