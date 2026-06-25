@@ -2,7 +2,6 @@
 @use '@/assets/scss/abstracts/mixins' as *;
 
 .carousel {
-	overflow: hidden;
-	width: 100svw;
-	height: 100svh;
+	overflow-x: clip;
+	width: 100%;
 }
