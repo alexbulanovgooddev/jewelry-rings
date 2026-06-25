@@ -1,0 +1,8 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.carousel {
+	overflow: hidden;
+	width: 100svw;
+	height: 100svh;
+}

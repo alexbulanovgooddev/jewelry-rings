@@ -1,0 +1,25 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.slider {
+	@media screen and (min-width: $md) {
+		position: relative;
+		width: 300%;
+		display: flex;
+	}
+
+	&__progress {
+		display: none;
+
+		@media screen and (min-width: $md) {
+			position: absolute;
+			top: 80%;
+			left: 0;
+			z-index: 10;
+			display: flex;
+			width: 0;
+			height: 1px;
+			background: var(--color-white);
+		}
+	}
+}
