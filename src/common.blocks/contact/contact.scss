@@ -9,6 +9,7 @@
 	background: var(--color-dark);
 
 	&__wrapper {
+		padding: 64px 0;
 		position: relative;
 	}
 
@@ -37,11 +38,13 @@
 
 		span {
 			display: block;
+			transform: translateY(100%);
 		}
 	}
 
 	&__description {
 		font-size: 1.2rem;
+		opacity: 0;
 
 		@media screen and (min-width: $md) {
 			width: 40%;
@@ -50,5 +53,10 @@
 
 	&__cta {
 		margin: 16px 0 32px;
+		overflow: hidden;
+
+		.button {
+			transform: translateY(100%);
+		}
 	}
 }
