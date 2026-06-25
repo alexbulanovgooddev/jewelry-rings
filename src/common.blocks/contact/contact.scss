@@ -1,0 +1,54 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.contact {
+	display: flex;
+	align-items: center;
+	min-height: 100svh;
+	color: var(--color-white);
+	background: var(--color-dark);
+
+	&__wrapper {
+		position: relative;
+	}
+
+	&__line {
+		width: 0;
+		height: 1px;
+		background: var(--color-gray);
+
+		&--top {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 10;
+		}
+
+		&--bottom {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			z-index: 10;
+		}
+	}
+
+	&__title {
+		font-size: clamp(2rem, 4vw, 5rem);
+
+		span {
+			display: block;
+		}
+	}
+
+	&__description {
+		font-size: 1.2rem;
+
+		@media screen and (min-width: $md) {
+			width: 40%;
+		}
+	}
+
+	&__cta {
+		margin: 16px 0 32px;
+	}
+}
