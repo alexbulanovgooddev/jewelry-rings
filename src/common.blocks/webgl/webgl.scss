@@ -1,0 +1,11 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.webgl {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	outline: none;
+	pointer-events: none;
+}
