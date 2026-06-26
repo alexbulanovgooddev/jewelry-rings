@@ -1,0 +1,32 @@
+@use '@/assets/scss/general/variables' as *;
+@use '@/assets/scss/abstracts/mixins' as *;
+
+.loading-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	height: 100%;
+	width: 100%;
+	background: #edf8ff;
+	display: grid;
+	place-content: center;
+
+	svg {
+		animation: grow-ring 1.5s ease-in-out infinite;
+	}
+}
+
+@keyframes grow-ring {
+	0% {
+		transform: scale(0.7);
+	}
+
+	50% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.7);
+	}
+}
