@@ -3,11 +3,19 @@ import { gsap } from 'gsap'
 
 document.addEventListener('DOMContentLoaded', () => {
 	const contact = document.querySelector('.contact') as HTMLElement
-	const topLine = document.querySelector('.contact__line--top')
-	const bottomLine = document.querySelector('.contact__line--bottom')
-	const titleText = document.querySelector('.contact__title span')
-	const ctaButton = document.querySelector('.contact__cta .button')
-	const description = document.querySelector('.contact__description')
+	const topLine = document.querySelector('.contact__line--top') as HTMLElement
+	const bottomLine = document.querySelector(
+		'.contact__line--bottom'
+	) as HTMLElement
+	const titleText = document.querySelector(
+		'.contact__title span'
+	) as HTMLElement
+	const ctaButton = document.querySelector(
+		'.contact__cta .button'
+	) as HTMLElement
+	const description = document.querySelector(
+		'.contact__description'
+	) as HTMLElement
 
 	const tl = gsap.timeline({
 		scrollTrigger: {

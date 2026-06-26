@@ -23,6 +23,11 @@
 			margin-bottom: 0;
 			flex: 0.3;
 		}
+
+		span {
+			display: block;
+			transform: translateY(100%);
+		}
 	}
 
 	&__box {
