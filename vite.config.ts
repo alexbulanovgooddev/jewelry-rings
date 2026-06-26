@@ -9,7 +9,7 @@ export default defineConfig({
 	server: {
 		open: true
 	},
-	base: './',
+	base: '/jewelry-rings/',
 	root: resolve(__dirname, './src'),
 	publicDir: resolve(__dirname, './public'),
 	build: {
