@@ -37,13 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
 			opacity: number
 		): void {
 			model.traverse((child: THREE.Object3D) => {
-				if ((child as THREE.Mesh).isMesh && (child as THREE.Mesh).material) {
-					const mesh = child as THREE.Mesh
-					const material = mesh.material as THREE.MeshStandardMaterial
-					material.wireframe = isWireframe
-					material.opacity = opacity
-					material.transparent = opacity < 1 ? true : false
-				}
+				const mesh = child as THREE.Mesh
+				if (!mesh.isMesh || !mesh.material) return
+
+				const materials = Array.isArray(mesh.material)
+					? mesh.material
+					: [mesh.material]
+
+				materials.forEach(material => {
+					const standardMaterial = material as THREE.MeshStandardMaterial
+					standardMaterial.wireframe = isWireframe
+					standardMaterial.opacity = opacity
+					standardMaterial.transparent = opacity < 1
+				})
 			})
 		}
 
@@ -94,19 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
 					end: 'bottom center',
 					id: 'wireframe',
 					onEnter: () => {
-						toggleWireframe(_ring as THREE.Object3D, true, 1)
+						if (!_ring) return
+						toggleWireframe(_ring, true, 1)
 						_contactRotation = false
 					},
 					onEnterBack: () => {
-						toggleWireframe(_ring as THREE.Object3D, true, 1)
+						if (!_ring) return
+						toggleWireframe(_ring, true, 1)
 						_contactRotation = false
 					},
 					onLeave: () => {
-						toggleWireframe(_ring as THREE.Object3D, false, 1)
+						if (!_ring) return
+						toggleWireframe(_ring, false, 1)
 						_contactRotation = false
 					},
 					onLeaveBack: () => {
-						toggleWireframe(_ring as THREE.Object3D, false, 1)
+						if (!_ring) return
+						toggleWireframe(_ring, false, 1)
 						_contactRotation = false
 					}
 				})
@@ -142,6 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		const directionalLight = new THREE.DirectionalLight('lightblue', 10)
 		directionalLight.position.z = 8
 		_scene?.add(directionalLight)
+
+		// Триггеры созданы асинхронно после загрузки модели —
+		// пересчитываем позиции на случай, если пользователь уже проскроллил
+		ScrollTrigger.refresh()
+	},
+	undefined,
+	error => {
+		console.error('Не удалось загрузить модель кольца:', error)
 	})
 
 	const sizes = {
@@ -158,9 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	_camera.position.x = 0
 	_camera.position.y = 0
 	_camera.position.z = 1.5
-	_scene.add(_camera)
 
-	const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement
+	const canvas = document.querySelector<HTMLCanvasElement>('canvas.webgl')
+	if (!canvas) return
+
 	_renderer = new THREE.WebGLRenderer({
 		canvas: canvas,
 		alpha: true,
